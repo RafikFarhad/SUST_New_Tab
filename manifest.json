@@ -5,11 +5,13 @@
     "browser_action": {
         "default_icon": "sust.png",
         "default_popup": "popup.html"
-       },
-       "permissions": [
-        "activeTab"
-        ],
-        "chrome_url_overrides": {
-            "newtab": "customNewTab.html"
-        }
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "system.storage"
+    ],
+    "chrome_url_overrides": {
+        "newtab": "customNewTab.html"
+    }
 }
