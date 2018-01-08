@@ -40,19 +40,22 @@ function getForm() {
 function getGreet() {
     var myDate = new Date();
     var name = localStorage.getItem('test');
+    if(name==null) 
+        name = "";
+    else name = ', ' + name;
     var ret = "";
     if (myDate.getHours() < 12) {
-        ret = "Good Morning, " +name ;
+        ret = "Good Morning" +name ;
     }
     else if(myDate.getHours() >=12 && myDate.getHours() <=17){
-        ret = "Good Afternoon, " +name ;
+        ret = "Good Afternoon" +name ;
     }
     else if (myDate.getHours() > 17 && myDate.getHours() <=24) {
-        ret = "Good Evening, " +name ;
+        ret = "Good Evening" +name ;
     }
     else
     {
-        ret = "Good Night, " + name ;
+        ret = "Good Night" + name ;
     }
     return ret;
 }
