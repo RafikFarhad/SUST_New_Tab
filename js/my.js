@@ -27,6 +27,7 @@ $(document).ready(function() {
         return false;
     });
 });
+// num=0; for i in *; do mv "$i" "$(printf '%d' $num).${i#*.}"; ((num++)); done
 
 
 function getForm() {
@@ -39,7 +40,7 @@ function getForm() {
 
 function getGreet() {
     var myDate = new Date();
-    var name = localStorage.getItem('test');
+    var name = localStorage.getItem('test2');
     if(name==null) 
         name = "";
     else name = ', ' + name;
