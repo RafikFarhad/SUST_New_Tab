@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "SUST_New_Tab",
+    "version": "0.01",
+    "browser_action": {
+        "default_icon": "sust.png",
+        "default_popup": "popup.html"
+       },
+       "permissions": [
+        "activeTab"
+        ],
+        "chrome_url_overrides": {
+            "newtab": "customNewTab.html"
+        }
+}
