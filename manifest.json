@@ -9,9 +9,12 @@
     "permissions": [
         "activeTab",
         "storage",
-        "system.storage"
+        "tabs"
     ],
     "chrome_url_overrides": {
         "newtab": "customNewTab.html"
-    }
+    },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAihpNEkPdT8Iyj3c5r8fCOf+K9bsCJJEvvBUiKvVQiN65uSBHj0PLWj+sJxNqsaE7sLqi3qmgCkzLsqxATlVW6Y1ntcPzHVHrZabjBRHXcRoygQ79IWMUqs+cYfQ114D6r/b3JI9A5zERKASgWMLuwYnCwpcyDEEzLRIdVlnysZ842ruld4322muUdeGzgPnl8fADObCpo0zTrFY/25s/lbZfG3fJvbY7nrvewbDYoumtw+yPJBRH5rDteJe7A44iFJBMT66LZJZBWpAhYTKW/IO70QvCaKPDOosMtKXLtFv4itsc+NKm98VOMsBad7eLzMT4EYNH4xIK3Wa+HCq+wQIDAQAB",
+    "optional_permissions": [ "bookmarks", "topSites", "chrome://favicon/" ],
+    "offline_enabled": true
 }

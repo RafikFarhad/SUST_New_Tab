@@ -1,15 +1,31 @@
 $(document).ready(function() {
-
-    if(localStorage.getItem('imageId')) {
-        var imageId = localStorage.getItem('imageId');
-        localStorage.setItem('imageId', (Number(imageId)+1)%28);
+    var imageId = 5;
+    var evaluate = false;
+    chrome.storage.local.get(["imageId"], function(item) {
+        imageId = item["imageId"];
+        chrome.storage.local.set({"imageId": (Number(imageId)+1)%28}, function() {
+            chrome.storage.local.get(["imageId"], function(item) {
+                $('body').css('background-image', 'url("img/'+imageId+'.jpg")');
+                evaluate = true;
+            });
+          });
+    });
+    if(!evaluate) {
+        chrome.storage.local.set({"imageId": 0}, function() {
+            chrome.storage.local.get(["imageId"], function(item) {
+                $('body').css('background-image', 'url("img/'+0+'.jpg")');
+                evaluate = true;
+            });
+          });
     }
-    else {
-        localStorage.setItem('imageId', (Math.round(Math.random()*100))%27);
-        var imageId = localStorage.getItem('imageId');
-    }
-
-    $('body').css('background-image', 'url("img/'+imageId+'.jpg")');
+    
+    // if(imageId != null) {
+    // }
+    // else {
+    //     imageId = 0;
+    // }
+    
+    
     if(localStorage.getItem('test2'))
     {
         $('#greet').html(getGreet());        
@@ -19,7 +35,7 @@ $(document).ready(function() {
         $('#greet').html(getForm());
     }
 
-    console.log("Ready on: " + imageId);
+    
     $("#name-form").submit(function(e){
         console.log($('#name').val());
         localStorage.setItem('test2', $('#name').val());
